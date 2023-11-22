@@ -34,7 +34,7 @@ pipeline {
             steps {
                 script {
                     // Your deployment steps go here
-                    sh 'echo "Deploying..."'
+                    'echo "Deploying..."'
                 }
             }
         }
