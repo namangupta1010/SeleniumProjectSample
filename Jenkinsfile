@@ -1,28 +1,40 @@
 pipeline {
     agent any
 
-    tools {
-        // Install the Maven version configured as "M3" and add it to the path.
-        maven "MAVEN_HOME"
-    }
-
     stages {
+        stage('Checkout') {
+            steps {
+                script {
+                    // Checkout code from the repository
+                    checkout scm
+                }
+            }
+        }
+
         stage('Build') {
             steps {
-                // Get some code from a GitHub repository
-                git 'https://github.com/namangupta1010/SeleniumProjectSample.git'
-
-                
-
-                  bat "mvn -Dmaven.test.failure.ignore=true clean package"
+                script {
+                    // Your build steps go here
+                     'echo "Building..."'
+                }
             }
+        }
 
-            post {
-                // If Maven was able to run the tests, even if some of the test
-                // failed, record the test results and archive the jar file.
-                success {
-                    junit '**/target/surefire-reports/TEST-*.xml'
-                    archiveArtifacts 'target/*.jar'
+
+        stage('Test') {
+            steps {
+                script {
+                    // Your test steps go here
+                     'echo "Testing..."'
+                }
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                script {
+                    // Your deployment steps go here
+                    'echo "Deploying..."'
                 }
             }
         }
