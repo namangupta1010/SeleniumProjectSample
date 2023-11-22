@@ -4,14 +4,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
 
 import java.util.Set;
 
-public class Flipkart {
+public class FlipKart {
 
-    public static void main(String[] args) throws InterruptedException {
-
-
+@Test
+public void  method()
+{
         WebDriver driver = new ChromeDriver();
 
         driver.manage().window().maximize();
