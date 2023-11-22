@@ -15,7 +15,7 @@ pipeline {
             steps {
                 script {
                     // Your build steps go here
-                    sh 'echo "Building..."'
+                     'echo "Building..."'
                 }
             }
         }
@@ -25,7 +25,7 @@ pipeline {
             steps {
                 script {
                     // Your test steps go here
-                    sh 'echo "Testing..."'
+                     'echo "Testing..."'
                 }
             }
         }
